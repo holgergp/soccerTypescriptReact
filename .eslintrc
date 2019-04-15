@@ -4,7 +4,7 @@
     "es6": true,
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -12,6 +12,8 @@
     }
   },
   "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
     "plugin:react/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended"
@@ -21,10 +23,20 @@
     "import",
     "react",
     "jest",
+    "react-hooks",
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn",
+    // Checks effect dependencies
     "no-cond-assign": "error",
     "no-dupe-args": "error",
     "no-dupe-keys": "error",
@@ -274,5 +286,11 @@
         ]
       }
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+      // React version. "detect" automatically picks the version you have installed.
+    }
+  }
 }

@@ -7,6 +7,7 @@
     "bootstrap": "^4.3.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
     "lodash": "^4.17.4",
@@ -17,28 +18,27 @@
     "react-dnd": "^7.0.2",
     "react-dnd-html5-backend": "^7.0.2",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.4"
+    "react-scripts": "2.1.4",
+    "typescript": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:run:record": "cypress run --record --key f9a14ac8-4663-47e2-b669-a1d1be9626b4",
-    "lint": "node_modules/.bin/eslint ./ --ext .js,.jsx",
+    "lint": "node_modules/.bin/eslint ./ --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "./node_modules/.bin/prettier --single-quote --write \"+(src|cypress)/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
     "cypress": "3.2.0",
+    "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^22.1.3",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.4.0",
     "gh-pages": "^2.0.0"
   },
