@@ -7,14 +7,15 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { SAMPLE_LEAGUE_TABLE } from '../constants/SampleData';
 import { Card, Col } from 'react-bootstrap';
 
-export type Team = {
+export interface Team {
   name: string;
   editing: boolean;
   id: string;
-};
-export type LeagueTable = {
+}
+
+export interface LeagueTable {
   positions: Team[];
-};
+}
 
 const LeagueTable = (): JSX.Element => {
   const defaultState = {

@@ -23,14 +23,14 @@ const teamSource = {
   }
 };
 
-const collect = (connect, monitor) => {
+const collect = (connect, monitor): DragSource => {
   return {
     connectDragSource: connect.dragSource(),
     isDragging: monitor.isDragging()
   };
 };
 
-const calculatePositionCssClass = positionNumber => {
+const calculatePositionCssClass = (positionNumber): string => {
   if (positionNumber === 1) {
     return 'tabellenfuehrerClass tabelleClass';
   }
@@ -50,7 +50,7 @@ const calculatePositionCssClass = positionNumber => {
   }
 };
 
-const Team = props => {
+const Team = (props): JSX.Element => {
   const { rank, team, updateTeamname } = props;
   // These two props are injected by React DnD,
   // as defined by your `collect` function above:
@@ -62,7 +62,7 @@ const Team = props => {
     calculatePositionCssClass(rank)
   );
 
-  const onChange = evt => {
+  const onChange = (evt): void => {
     updateTeamname(team, evt.target.value);
   };
 

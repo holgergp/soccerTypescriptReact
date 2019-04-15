@@ -1,14 +1,14 @@
 export default class Positions {
-  static _findTeamRank = (teamId, positions) => {
+  private static _findTeamRank = (teamId, positions) => {
     const zeroBasedIndex = positions.findIndex(team => team.id === teamId);
     return zeroBasedIndex + 1;
   };
 
-  static _findTeam = (teamId, positions) => {
+  private static _findTeam = (teamId, positions) => {
     return positions.find(team => team.id === teamId);
   };
 
-  static recalculateSwappedPositions = (
+  public static recalculateSwappedPositions = (
     sourceTeamId,
     targetTeamId,
     currentPositions
@@ -26,7 +26,7 @@ export default class Positions {
     return clonedPositions;
   };
 
-  static recalculatePositionsWithRenamedTeam = (
+  public static recalculatePositionsWithRenamedTeam = (
     team,
     updatedText,
     currentPositions

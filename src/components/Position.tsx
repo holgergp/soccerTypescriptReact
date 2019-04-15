@@ -10,7 +10,7 @@ const positionTarget = {
   }
 };
 
-const collect = (connect, monitor) => {
+const collect = (connect, monitor): DropTarget => {
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
@@ -18,7 +18,7 @@ const collect = (connect, monitor) => {
   };
 };
 
-const Position = props => {
+const Position = (props): JSX.Element => {
   const team = props.team;
   const rank = props.rank;
   const updateTeamname = props.updateTeamname;
