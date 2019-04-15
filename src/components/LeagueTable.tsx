@@ -7,12 +7,21 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { SAMPLE_LEAGUE_TABLE } from '../constants/SampleData';
 import { Card, Col } from 'react-bootstrap';
 
-const LeagueTable = () => {
+export type Team = {
+  name: string;
+  editing: boolean;
+  id: string;
+};
+export type LeagueTable = {
+  positions: Team[];
+};
+
+const LeagueTable = (): JSX.Element => {
   const defaultState = {
     positions: SAMPLE_LEAGUE_TABLE
   };
 
-  const getInitialState = () => {
+  const getInitialState = (): LeagueTable => {
     if (_.isUndefined(localStorage.state)) {
       return defaultState;
     }
@@ -26,7 +35,7 @@ const LeagueTable = () => {
 
   const [positions, setPositions] = useState(getInitialState().positions);
 
-  const swapPositions = (sourceTeamId, targetTeamId) => {
+  const swapPositions = (sourceTeamId, targetTeamId): void => {
     setPositions(
       Positions.recalculateSwappedPositions(
         sourceTeamId,
@@ -36,7 +45,7 @@ const LeagueTable = () => {
     );
   };
 
-  const updateTeamname = (team, updatedText) => {
+  const updateTeamname = (team, updatedText): void => {
     setPositions(
       Positions.recalculatePositionsWithRenamedTeam(
         team,

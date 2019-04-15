@@ -4,7 +4,7 @@ import './App.css';
 import { Row, Container } from 'react-bootstrap';
 import LeagueTable from './LeagueTable';
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <div className="index">
       <Container>
